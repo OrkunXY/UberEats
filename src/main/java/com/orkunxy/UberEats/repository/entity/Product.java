@@ -30,11 +30,6 @@ public class Product {
     @NotNull(message = "Product cost cannot be empty")
     @Positive(message = "Product cost must be positive")
     private Integer cost;
+    private Long restaurantId;
 
-    @ManyToOne
-    @JoinColumn(name = "restaurant_id")
-    private Restaurant restaurant;
-
-    @ManyToMany(mappedBy = "product")
-    private List<Order> orders = new ArrayList<>();
 }

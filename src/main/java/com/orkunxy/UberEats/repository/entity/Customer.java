@@ -52,5 +52,9 @@ public class Customer {
     private String balance;
 
     @ElementCollection
-    private List<String> activationCodes;
+    private List<Integer>orderId;
+
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    private EStatus estatus=EStatus.PENDING;
 }
