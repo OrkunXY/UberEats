@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CustomerRegisterResponseDto {
 
-    private Long customerId;
-    private String activationCode;
+    String email;
+    String password;
 }

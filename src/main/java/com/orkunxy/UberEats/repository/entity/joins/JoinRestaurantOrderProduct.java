@@ -1,5 +1,6 @@
 package com.orkunxy.UberEats.repository.entity.joins;
 
+/*
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,4 +22,4 @@ public class JoinRestaurantOrderProduct {
     private String productName;
     private String cost;
 
-}
+}*/

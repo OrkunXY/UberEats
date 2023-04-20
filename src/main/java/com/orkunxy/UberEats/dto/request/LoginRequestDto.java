@@ -1,4 +1,4 @@
-package com.orkunxy.UberEats.dto.request.customer;
+package com.orkunxy.UberEats.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ActivateStatusRequestDto {
-    Long id;
-    String activationCode;
+public class LoginRequestDto {
+    String email;
+    String password;
 }

@@ -9,9 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UpdateRestaurantRequestDto {
-    Long id;
-    String name;
-    Double point;
-    String address;
+public class RegisterRequestDto {
+    private String name;
+    private String surname;
+    private String email;
+    private String password;
+    private String rePassword;
+
 }

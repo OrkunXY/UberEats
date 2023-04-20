@@ -3,14 +3,14 @@ server:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ubereat
-    username: root
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/UberEats
+    username: postgres
     password: 1234
   jpa:
     hibernate:
       ddl-auto: update
-      show-sql: true
-      properties:
-        hibernate:
-          format_sql: true
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

@@ -30,4 +30,12 @@ public class Restaurant {
     @NotBlank(message = "Address cannot be blank")
     private String address;
 
+    @ElementCollection
+    List<Integer>productId;
+
+    @ElementCollection
+    List<Integer>orderId;
+
+
+
 }

@@ -7,6 +7,7 @@ public class EndPoints {
     public static final String PRODUCT = VERSION + "/product";
     public static final String RESTAURANT = VERSION + "/restaurant";
     public static final String REGISTER = "/register";
+    public static final String REGISTERdto = "/registerDto";
     public static final String ACTIVATE_STATUS = "/activate-status";
     public static final String LOGIN = "/login";
     public static final String FIND_ALL = "/find-all";
