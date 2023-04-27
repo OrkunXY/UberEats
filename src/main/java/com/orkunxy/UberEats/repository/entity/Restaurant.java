@@ -15,7 +15,6 @@ import java.util.Locale;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
 @Entity
 @Table(name = "tblrestaurant")
 public class Restaurant {

@@ -4,9 +4,7 @@ import com.orkunxy.UberEats.repository.entity.Product;
 import com.orkunxy.UberEats.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +18,10 @@ public class ProductController {
     @GetMapping(FIND_ALL)
     public ResponseEntity<List<Product>> findall(){
         return ResponseEntity.ok(productService.findAll());
+    }
+
+    @PostMapping(SAVE)
+    public ResponseEntity<Product> save(@RequestBody Product product){
+        return ResponseEntity.ok(productService.save(product));
     }
 }

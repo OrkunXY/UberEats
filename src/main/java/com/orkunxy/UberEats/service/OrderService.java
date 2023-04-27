@@ -2,8 +2,10 @@ package com.orkunxy.UberEats.service;
 
 import com.orkunxy.UberEats.dto.request.GiveOrderDto;
 import com.orkunxy.UberEats.mapper.IOrderMapper;
+import com.orkunxy.UberEats.repository.IOrderCustomerRepository;
 import com.orkunxy.UberEats.repository.IOrderRepository;
 import com.orkunxy.UberEats.repository.entity.Order;
+import com.orkunxy.UberEats.repository.entity.joins.OrderCustomer;
 import com.orkunxy.UberEats.utility.ServiceManager;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +19,16 @@ public class OrderService extends ServiceManager<Order,Long> {
 
     private CustomerService customerService;
 
+    private IOrderCustomerRepository orderCustomerRepository;
+
     public OrderService(IOrderRepository orderRepository,
 
-                        CustomerService customerService){
+                        CustomerService customerService,
+                        IOrderCustomerRepository orderCustomerRepository){
         super(orderRepository);
         this.orderRepository=orderRepository;
         this.customerService=customerService;
+        this.orderCustomerRepository=orderCustomerRepository;
 
     }
 
@@ -68,5 +74,9 @@ public class OrderService extends ServiceManager<Order,Long> {
         System.out.println("order kaydedildi"+order);
         return order;
     }
+    public OrderCustomer save(OrderCustomer orderCustomer){
+        return orderCustomerRepository.save(orderCustomer);
+    }
+
 }
 

@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class GiveOrderDto {
-    private List<Long> productId;
 
-    private Long customerId;
+
+    private Long orderCustomerId;
 }

@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class RestaurantRegisterRequestDto {
     String name;
-    String adress;
     Double point;
+    String adress;
+
 }
