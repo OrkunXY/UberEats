@@ -1,12 +1,14 @@
 package com.orkunxy.UberEats.controller;
 
 import com.orkunxy.UberEats.dto.request.RegisterRequestDto;
+import com.orkunxy.UberEats.dto.response.RegisterResponseDto;
 import com.orkunxy.UberEats.repository.entity.Customer;
 import com.orkunxy.UberEats.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 import static com.orkunxy.UberEats.constants.EndPoints.*;
@@ -16,6 +18,7 @@ import static com.orkunxy.UberEats.constants.EndPoints.*;
 @RequiredArgsConstructor
 public class CustomerController {
     private final CustomerService customerService;
+
 
 
     @GetMapping(FIND_ALL)
@@ -31,4 +34,11 @@ public class CustomerController {
     public ResponseEntity<Customer> register(String name,String surname,String email,String password,String repassword){
         return ResponseEntity.ok(customerService.register(name, surname, email, password, repassword));
     }
+    ;
+
+    /*@PostMapping(REGISTER)
+    public ResponseEntity<RegisterResponseDto> register(@RequestBody @Valid RegisterRequestDto dto){
+        return ResponseEntity.ok(customerService.register(dto));
+    */
+
 }

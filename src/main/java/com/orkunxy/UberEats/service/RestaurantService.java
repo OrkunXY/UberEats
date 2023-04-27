@@ -1,11 +1,14 @@
 package com.orkunxy.UberEats.service;
 
+
+
+import com.orkunxy.UberEats.dto.request.RestaurantRegisterRequestDto;
+import com.orkunxy.UberEats.mapper.IRestaurantMapper;
 import com.orkunxy.UberEats.repository.IRestaurantRepository;
 import com.orkunxy.UberEats.repository.entity.Restaurant;
-import com.orkunxy.UberEats.utility.IService;
+
 import com.orkunxy.UberEats.utility.ServiceManager;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.jpa.repository.JpaRepository;
+
 import org.springframework.stereotype.Service;
 
 
@@ -13,13 +16,18 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
-public class RestaurantService implements IService<Restaurant,Long> {
-private final IRestaurantRepository restaurantRepository;
+public class RestaurantService extends ServiceManager<Restaurant,Long> {
+
+    private final IRestaurantRepository repository;
+
+    public RestaurantService(IRestaurantRepository repository){
+        super(repository);
+        this.repository=repository;
+    }
 
     @Override
     public Restaurant save(Restaurant restaurant) {
-        return restaurantRepository.save(restaurant);
+        return repository.save(restaurant);
     }
 
     @Override
@@ -49,11 +57,15 @@ private final IRestaurantRepository restaurantRepository;
 
     @Override
     public List<Restaurant> findAll() {
-        List<Restaurant> restaurantList=restaurantRepository.findAll();
+        List<Restaurant> restaurantList=repository.findAll();
         if (restaurantList.isEmpty()){
             System.out.println("listebos?!!?");
         }
 
-        return restaurantRepository.findAll();
+        return repository.findAll();
+    }
+    public void save(RestaurantRegisterRequestDto dto){
+        save(IRestaurantMapper.INSTANCE.toRestaurantRegisterDto(dto));
+
     }
 }

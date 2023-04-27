@@ -1,6 +1,7 @@
 package com.orkunxy.UberEats.mapper;
 
 import com.orkunxy.UberEats.dto.request.RegisterRequestDto;
+import com.orkunxy.UberEats.dto.response.RegisterResponseDto;
 import com.orkunxy.UberEats.repository.entity.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
@@ -12,6 +13,7 @@ public interface ICustomerMapper {
     ICustomerMapper INSTANCE = Mappers.getMapper(ICustomerMapper.class);
 
     Customer toCustomerRegisterDto(final RegisterRequestDto dto);
+    RegisterResponseDto fromCustomerResponseDto(Customer customer);
 
 
     }

@@ -22,6 +22,7 @@ public class Product {
     private Long id;
 
     @NotBlank(message = "Product name cannot be empty")
+    @Column(name = "productName")
     private String name;
 
     @NotBlank(message = "Product category cannot be empty")
@@ -30,6 +31,5 @@ public class Product {
     @NotNull(message = "Product cost cannot be empty")
     @Positive(message = "Product cost must be positive")
     private Integer cost;
-    private Long restaurantId;
 
 }

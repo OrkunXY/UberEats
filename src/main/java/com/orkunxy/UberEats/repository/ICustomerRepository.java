@@ -11,8 +11,4 @@ import java.util.Optional;
 public interface ICustomerRepository extends JpaRepository<Customer,Long> {
     Optional<Customer> findByEmailAndPassword(String email, String password);
 
-   /* boolean existsById(Long id);
-
-    @Query("select c.name from Customer c where c.id = ?1")
-    String findCustomerNameById(Long id);*/
-}
+   }

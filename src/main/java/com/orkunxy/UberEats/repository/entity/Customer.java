@@ -25,6 +25,7 @@ public class Customer {
     private Long id;
 
     /*@NotBlank(message = "Name cannot be blank")*/
+    @Column(name = "customerName")
     private String name;
 
     private String surname;
@@ -51,16 +52,6 @@ public class Customer {
 
     /*@NotBlank(message = "Balance cannot be blank")*/
     private String balance;
-
-    @ElementCollection
-    private List<Integer>orderId;
-
-    @ElementCollection
-    private List<Integer>restaurantId;
-
-    @ElementCollection
-    private List<Integer>productId;
-
 
 
     @Enumerated(EnumType.STRING)

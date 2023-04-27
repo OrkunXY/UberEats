@@ -19,5 +19,6 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     Long customerId;
-    Integer restaurantId;
+
+
 }

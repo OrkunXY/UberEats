@@ -1,4 +1,4 @@
-package com.orkunxy.UberEats.dto.response;
+package com.orkunxy.UberEats.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,12 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CustomerRegisterResponseDto {
-
-    String email;
-    String password;
-
+@Builder
+public class RestaurantRegisterRequestDto {
+    String name;
+    String adress;
+    Double point;
 }

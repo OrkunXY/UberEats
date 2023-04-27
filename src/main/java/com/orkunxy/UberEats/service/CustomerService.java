@@ -6,7 +6,6 @@ import com.orkunxy.UberEats.repository.ICustomerRepository;
 import com.orkunxy.UberEats.repository.entity.Customer;
 import com.orkunxy.UberEats.utility.IService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -93,5 +92,6 @@ public class CustomerService implements IService<Customer,Long> {
             return customerRepository.save(customer);
         }
     }
+
 }
 

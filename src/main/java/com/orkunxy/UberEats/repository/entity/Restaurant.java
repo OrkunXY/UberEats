@@ -21,21 +21,13 @@ import java.util.Locale;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    @Min(0)
-    @Max(10)
-    @Builder.Default
-    private Double point = 5.2;
-    @NotBlank(message = "Address cannot be blank")
-    private String address;
+    Long id;
 
-    @ElementCollection
-    List<Integer>productId;
-
-    @ElementCollection
-    List<Integer>orderId;
+    String name;
 
 
+    Double point ;
+    /*@NotBlank(message = "Address cannot be blank")*/
 
+    String adress;
 }
